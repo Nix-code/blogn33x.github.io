@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://nix-code.github.io/blogn33x.github.io/sitemap.xml
