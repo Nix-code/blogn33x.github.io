@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Git and GitHub: part1 | Nishant&#39;s Blog</title>
+<meta name="keywords" content="shortcodes">
+<meta name="description" content="Contains every single details about git and it&#39;s component with deep intuition">
+<meta name="author" content="Nishant Banjade">
+<link rel="canonical" href="https://nix-code.github.io/blogn33x.github.io/posts/git_github_part1/">
+<link crossorigin="anonymous" href="/blogn33x.github.io/assets/css/stylesheet.b183800e2cfbb62c3bce2b2ba56cdb2dd33af76c75cf4550173d5dfebd7c68a6.css" integrity="sha256-sYOADiz7tiw7zisrpWzbLdM692x1z0VQFz1d/r18aKY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://nix-code.github.io/blogn33x.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://nix-code.github.io/blogn33x.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://nix-code.github.io/blogn33x.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://nix-code.github.io/blogn33x.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://nix-code.github.io/blogn33x.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Git and GitHub: part1" />
+<meta property="og:description" content="Contains every single details about git and it&#39;s component with deep intuition" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nix-code.github.io/blogn33x.github.io/posts/git_github_part1/" /><meta property="og:image" content="https://nix-code.github.io/blogn33x.github.io/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-10-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-10-26T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://nix-code.github.io/blogn33x.github.io/papermod-cover.png"/>
+
+<meta name="twitter:title" content="Git and GitHub: part1"/>
+<meta name="twitter:description" content="Contains every single details about git and it&#39;s component with deep intuition"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://nix-code.github.io/blogn33x.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Git and GitHub: part1",
+      "item": "https://nix-code.github.io/blogn33x.github.io/posts/git_github_part1/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Git and GitHub: part1",
+  "name": "Git and GitHub: part1",
+  "description": "Contains every single details about git and it's component with deep intuition",
+  "keywords": [
+    "shortcodes"
+  ],
+  "articleBody": "Git and GitHub | Beginners part 1 Introduction Let us suppose, you and your team are assigned work to code a simple news portal website. On completion of the project, all of you will be awarded with a prize money. But the problem here was you and your friends are far from each other. Now you have no idea how to complete the project together because a single person cannot code the entire website in a limited time. You now asked your senior how to do the task together yet being far from each other. The senior advised him to see the Git and GitHub blog of Nishant Banjade. Let’s study this together and win the prize money.\nIn almost every git tutorial, you see git is a version control system in the first line. But you are not told enough about the version control system efficiently.\nVersion Control Basically, the version control system is the system that is responsible for managing and recording the changes made to the computer programs, documents, large web sites, or other collections of information so that in future you can easily view the first version of the system. In simple terms, say you are making the same news portal website. You are slowly progressing in the development work and you wanted to see what changes were made by you on the third day of the project. Now using the version control system, you can easily trace the history of the changes made by you over time.\nChanges are usually identified by a number or letter code, termed the “revision number”, “revision level”, or simply “revision”. Each revision is associated with a timestamp and the person making the change. Revisions can be compared, restored, and, with some types of files, merged.\nUsing a version control system in a team is very efficient because it allows you to collaborate in a team. If someone is designing a front-end from Asia and another is developing a backend from America, there will be no problem at all during the collaboration.\nGit Overview Git is a version control system that allows users to maintain history of the project at a particular point of time. These histories are saved via git commit command. Developers use git to track all the changes made by them or their team over time.\nIt also allows them to see who made what changes at what time. It shows the entire history of changes made in the past. Git is also very famous in open source softwares as all the developers around the world collaborate in a single project. Please, see the image below which contains the information about when and who made the changes in what date.\nGitHub Github is an Internet hosting service for software development and version control using Git. It provides the distributed version control of Git plus access control, bug tracking, software feature requests, task management, continuous integration, and wikis for every project. (wikipedia)\nSimply, GitHub is a platform which allows us to host a git repository. Git repository tracks and saves the history of all changes made to the files in a Git project. It saves this data in a directory called . git , also known as the repository folder. Git uses a version control system to track all changes made to the project and save them in the repository. It is simply a folder where the entire project is saved. Below is the demonstration of creation of Git repository using Github\nTo create a Git repository, visit github.com and go to the repository section and create a new repository.\nI assume you have installed git in your system. I am using the unix operating system for this tutorial. You can install git from any operating system and it’s free.\nAfter creating the git repository. Let’s make some changes and save some files and see the history that I have mentioned before.\nWe have created a git repository named “Github-tutorial”. We will see everything mentioned there like the commands, SSH, HTTPS, Fork, Pull requests , Issues , Settings and many more.\nNow create a folder in your local system as GitHub-tutorial. Let’s learn along with writing some handson commands.\n$git init Now, it will assign an empty git repository in your local directory(folder). All the histories, changes and everything is managed by the .git folder which is a hidden folder and it will get generated the moment you initialize the git repository. The .git folder contains all information that is necessary for the project and all information relating commits, remote repository address, etc. It also contains a log that stores the commit history. This log can help you to roll back to the desired version of the code.\nWe will see basic linux commands in the next blog about Linux. So, if you don’t know about mkdir, ls, no need to get worried you can create a folder manually too.\nThe .git folder will contain details of every single change made to the code base. All snapshots of the modifications will be recorded in this folder like a database, which makes it possible to undo the changes and rollback to the desired version of the code.\nThe .git folder is hidden to prevent accidental deletion or modification of the folder. The version history of the code base will be lost if this folder is deleted. This means, we will not be able to rollback changes made to the code in future.\nLet’s see what individual component does inside the .git directory\n hooks − This folder contains script files. Git hooks are the scripts that are executed before or after events like commit, push etc. objects − This folder represents an object database of Git. config − This is the local configuration file. refs − This folder stores information about tags and branches. HEAD − This file stores reference to the current branch. It points to the master branch by default. index − This is a binary file and stores staging information (~tutorials point)  Let’s understand some of the git commands and how it helps in version controlling.\nHere, we created a file and wrote “Hi people” inside it. After that we wrote the command “git status”, and we saw random_text.md in red color. The file is now an untracked file. If the file is untracked , no one knows whether it has been created by someone or not.\nUntracked files are the ones still not versioned—”tracked”—by Git. This is the state of new files you add to your repository. That basically means Git is aware the file exists, but still hasn’t saved it in its internal database.\nTo add Untracked files in its internal database or say to version it, we use the “git add  “ command.\nCommand sample till now\n$git init $touch random_text.md $echo \"Hi people\"  random_text.md $git status $git add . $git status Now the file has been staged, versioned or tracked by git. You see the random_text.md in green color now. “git add .” means to save every untracked file present in a current directory. Don’t worry if you don’t know about branch, master, commits , git rm – cached , we will explore them shortly.\nGit commit Git commit is the way of saving the history of the progress with a message.The git commit command captures a snapshot of the project’s currently staged changes. The commits are not changed/ deleted until and unless it is forced to.\ngit commit -m \"add messages\" -m means message acronym.   Create Mode: - Tells about permissions given to that file, i.e., File permissions. Here, 100644 means the file is a normal file.\n  Only 1 file is changed i.e random_text.md 1 insertion(+): 1 line is added to the file.\n  Note: Sometimes, we accidentally tracked the file which should be kept untracked. So, to restore it back from tracked to untracked. We use the restore command.\ngit restore --staged random_text.md To see the history of commits of your project and who and when it was done, use log command.\ngit log\n32d20fa7e… is the hash value of the commit that stores information about the commits and version at that point of time.\nSay, accidently you deleted a file which was very necessary with a commit too. Now, the file gets deleted but the history gets reflected in a log as seen below. In the first log, the commit of deleted random_text.md is reflected.\nNow to delete this log and to get our deleted file back. We have to use the below mentioned steps.\n Type git log and see the logs. Copy the hash code of the log just below the log of the deleted file. In our case the hash code of the log just below the log of the deleted file starts with 32d20f… Use git reset . If you check the git log now, the history will be erased. Now, to restore the deleted file and make it untracked, you can use the git restore command as mentioned below.  In the above example, we restored the tracked file but in most of the cases you can also try doing stashing. Let’s understand it.\nGit Stash Say you are working on a project and you want to try out something new with a clean code base, in this case you don’t want to commit or save the history of your work. For this, you use stash in git.It is used to make all the changes somewhere else without making a commit and history. So, after finalizing the task, we can get back this work and commit in any branch. We’ll talk about branch later.\nFor example: You made some changes in a file for some modifications. You are not sure whether your project manager will allow these modifications or not. So, you can’t commit it in a main branch but also you think this is a really cool feature so you can’t get rid of these modifications too. So, you can use stash for this.\nStash will keep history of changes without even committing. Thus, in future you can get the changes/ modifications back or delete it.\nStashing takes the messy state of your working directory, and temporarily saves it for further use. The git stash command enables you to switch branches without committing the current branch.\ngit stash\nYou can observe after using stash, there are no logs about that tracked files. So you can get back the hidden state of files back from the stashed place.\ngit stash pop\nYou can again hide the files using the git stash command easily.\nIn order to delete the stashed files. You can see nothing after you write the git status command.\ngit stash clear\nGit Remote While working in a project as a team, there consists of a centralized repository where the owner or the ones who have the access to the centralized repository can review the others code contribution and merge their contribution if their work matches their code of conduct or principles.\nSo, other contributors contain a copy of the centralized repository. The copying of the centralized repo into your local system is done via Fork.\nAfter forking, you need to clone their project into your local system. So, the clone is possible due to the remote URL.\nThe git remote command is one piece of the broader system which is responsible for syncing changes.\nThe git remote command lets you create, view, and delete connections to other repositories. Remote connections are more like bookmarks rather than direct links into other repositories. Instead of providing real-time access to another repository, they serve as convenient names that can be used to reference a not-so-convenient URL. (reference : atlassian.com)\nGit supports many ways to reference a remote repository. Two ways to access a remote repository are using the HTTP and SSH method. For read-only access to the repository, you should use HTTP and for read-write access, should use SSH protocol.\nYou need to configure ssh in your local system for git in order to make it work. The command for remote access is\n$git remote add origin git@github.com:Nix-code/GitHub-tutorial.git Here let’s break down the command.\nremote - URL “the place where your code is stored.” That URL could be your repository on GitHub, or another user’s fork(we’ll discuss afterward), or even on a completely different server.\nadd - It adds the URL origin - Origin of the URL\nNow , git referenced a remote repository using SSH. You can get this code right after you create a new repository. Now, you are ready to push your changes in gitHub.\nYou can push via command line and the changes get reflected in a website.\ngit push origin \nIf you check in your repository in the website, you can see all those files in a git repository online.\nNow, your project is pushed to GitHub using Git version control.\nLet’s Learn about some advanced concepts. Clone: In general terms, clone means to make a deep copy of something. Same in git, we use clone command to copy the entire repository of others in our local system.\nCopy the SSH code of your project and just do the steps shown in the figure.\ngit clone \nAs shown in the figure, the entire git repository is copied into your local repository. Cloning is useful when you want to see how others' code works in your system and it is also useful when you are contributing to other people’s repositories.\nFork | Pull Request and Merge Fork is similar to clone but instead of copying the other’s repository in a local directory, it copies the repository in a server. So, whenever you fork other’s repository, it is visible as a copy in your gitHub repository. After forking, you get your own unique SSH and HTTPS code of your copied repository. So, whenever you wish to make changes in forked repo, it won’t affect the main / centralized repo.\nAfter fork, you need to clone the forked repository to make changes locally. After making complete modifications in the cloned repository, you make a Pull request to the owner of the main repository. The owner looks into your modification and if he/she thinks your modification is good enough , he/she merges your pull request and your contribution is visible in the main repository.\nFork Example\nAfter fork, make a clone of this project in your local system using the git clone command. After making changes, make a Pull request.\nAlways make a pull request from your cloned repository. If you try to push directly in a centralized repo, it won’t work.\nAfter your work is loved by the main project maintainer, it will get merged like this.\nThis is how open source softwares is made. In a centralized repository, a lot of developers around the world contribute and make the software better. Example of open source software is the linux operating system.\nThis is the repo of a Linux operating system. Let’s observe it carefully. Till now, 45.2K people have already forked this main repo, it means, they have copied this project in their gitHub server. Around 5000 + people have already contributed something to this project. If you successfully contribute anything to another’s repo and get merged by the maintainer, your identity will be shown in a contributor list. Hat’s off to these 5000+ developers who made the linux system so better till date free of cost.\nIn the future blog, we will see about branches, merge conflicts, rebase about GitHub License and many more.\nI appreciate you if you have gone this far reading this blog. Thank you very much for your time. If you have learned something new today, comment on your thoughts.\n",
+  "wordCount" : "2623",
+  "inLanguage": "en",
+  "datePublished": "2022-10-26T00:00:00Z",
+  "dateModified": "2022-10-26T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Nishant Banjade"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://nix-code.github.io/blogn33x.github.io/posts/git_github_part1/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Nishant's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://nix-code.github.io/blogn33x.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://nix-code.github.io/blogn33x.github.io/" accesskey="h" title="Nishant&#39;s Blog (Alt + H)">Nishant&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://nix-code.github.io/blogn33x.github.io/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/Nix-code" title="GitHub">
+                    <span>GitHub</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://nix-code.github.io/blogn33x.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://nishantme.herokuapp.com" title="Website">
+                    <span>Website</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://nix-code.github.io/blogn33x.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://nix-code.github.io/blogn33x.github.io/posts/">Posts</a></div>
+    <h1 class="post-title">
+      Git and GitHub: part1
+    </h1>
+    <div class="post-description">
+      Contains every single details about git and it&#39;s component with deep intuition
+    </div>
+    <div class="post-meta"><span title='2022-10-26 00:00:00 +0000 UTC'>October 26, 2022</span>&nbsp;·&nbsp;13 min&nbsp;·&nbsp;Nishant Banjade&nbsp;|&nbsp;<a href="https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content/posts/Git_GitHub_part1.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#git-and-github--beginners-part-1" aria-label="Git and GitHub | Beginners part 1">Git and GitHub | Beginners part 1</a><ul>
+                        
+                <li>
+                    <a href="#introduction" aria-label="Introduction">Introduction</a></li>
+                <li>
+                    <a href="#version-control" aria-label="Version Control">Version Control</a></li>
+                <li>
+                    <a href="#git-overview" aria-label="Git Overview">Git Overview</a></li>
+                <li>
+                    <a href="#github" aria-label="GitHub">GitHub</a></li>
+                <li>
+                    <a href="#git-commit" aria-label="Git commit">Git commit</a><ul>
+                        
+                <li>
+                    <a href="#note" aria-label="Note:">Note:</a></li></ul>
+                </li>
+                <li>
+                    <a href="#git-stash" aria-label="Git Stash">Git Stash</a></li>
+                <li>
+                    <a href="#git-remote" aria-label="Git Remote">Git Remote</a></li>
+                <li>
+                    <a href="#lets-learn-about-some-advanced-concepts" aria-label="Let’s Learn about some advanced concepts.">Let’s Learn about some advanced concepts.</a></li>
+                <li>
+                    <a href="#fork--pull-request-and-merge" aria-label="Fork | Pull Request and Merge">Fork | Pull Request and Merge</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="git-and-github--beginners-part-1">Git and GitHub | Beginners part 1<a hidden class="anchor" aria-hidden="true" href="#git-and-github--beginners-part-1">#</a></h2>
+<h3 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h3>
+<p><img loading="lazy" src="https://images.unsplash.com/photo-1647166545674-ce28ce93bdca?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80" alt="Github"  />
+</p>
+<p>Let us suppose, you and your team are assigned work to code a simple <strong>news portal website</strong>. On completion of the project, all of you will be awarded with a prize money. But the problem here was you and your friends are far from each other. Now you have no idea how to complete the project together because a single person cannot code the entire website in a limited time. You now asked your senior how to do the task together yet being far from each other. The senior advised him to see the Git and GitHub blog of <em>Nishant Banjade</em>. Let’s study this together and win the prize money.</p>
+<p>In almost every git tutorial, you see git is a version control system in the first line. But you are not told enough about the version control system efficiently.</p>
+<h3 id="version-control">Version Control<a hidden class="anchor" aria-hidden="true" href="#version-control">#</a></h3>
+<p>Basically, the version control system is the system that is responsible for managing and recording the changes made to the computer programs, documents, large web sites, or other collections of information so that in future you can easily view the first version of the system. In simple terms, say you are making the same news portal website. You are slowly progressing in the development work and you wanted to see what changes were made by you on the third day of the project. Now using the version control system, you can easily trace the history of the changes made by you over time.</p>
+<p>Changes are usually identified by a number or letter code, termed the &ldquo;revision number&rdquo;, &ldquo;revision level&rdquo;, or simply &ldquo;revision&rdquo;. Each revision is associated with a timestamp and the person making the change. Revisions can be compared, restored, and, with some types of files, merged.</p>
+<p>Using a version control system in a team is very efficient because it allows you to collaborate in a team. If someone is designing a front-end from Asia and another is developing a backend from America, there will be no problem at all during the collaboration.</p>
+<h3 id="git-overview">Git Overview<a hidden class="anchor" aria-hidden="true" href="#git-overview">#</a></h3>
+<p>Git is a version control system that allows users to maintain history of the project at a particular point of time. These histories are saved via git commit command. Developers use git to track all the changes made by them or their team over time.</p>
+<p>It also allows them to see who made what changes at what time. It shows the entire history of changes made in the past.
+Git is also very famous in open source softwares as all the developers around the world collaborate in a single project. Please, see the image below which contains the information about when and who made the changes in what date.</p>
+<p><img loading="lazy" src="https://drive.google.com/uc?id=1c3NlhO7iT8fQqRINOelFxu1fpnfsEphF" alt="Commit"  />
+</p>
+<h3 id="github">GitHub<a hidden class="anchor" aria-hidden="true" href="#github">#</a></h3>
+<p>Github is an Internet hosting service for software development and version control using Git. It provides the distributed version control of Git plus access control, bug tracking, software feature requests, task management, continuous integration, and wikis for every project. (wikipedia)</p>
+<p>Simply, GitHub is a platform which allows us to host a git repository. Git repository tracks and saves the history of all changes made to the files in a Git project. It saves this data in a directory called . git , also known as the repository folder. Git uses a version control system to track all changes made to the project and save them in the repository.
+It is simply a folder where the entire project is saved.
+Below is the demonstration of creation of Git repository using <a href="www.github.com">Github</a></p>
+<p>To create a Git repository, visit github.com and go to the repository section and create a new repository.</p>
+<p><img loading="lazy" src="https://drive.google.com/uc?id=1_uy46V9T98R0NdYk9pPQfViPF1vrgOeX" alt="Commit"  />
+</p>
+<p>I assume you have installed git in your system. I am using the unix operating system for this tutorial. You can install git from any operating system and it’s free.</p>
+<p>After creating the git repository. Let’s make some changes and save some files and see the history that I have mentioned before.</p>
+<p><img loading="lazy" src="https://drive.google.com/uc?id=15ino6EG_wWhFLPl4fxC-UHllQJJhas8E" alt="history"  />
+</p>
+<p>We have created a git repository named “Github-tutorial”. We will see everything mentioned there like the commands, SSH, HTTPS, Fork, Pull requests , Issues , Settings and many more.</p>
+<p>Now create a folder in your local system as GitHub-tutorial. Let’s learn along with writing some handson commands.</p>
+<pre tabindex="0"><code>$git init
+</code></pre><p>Now, it will assign an empty git repository in your local directory(folder). All the histories, changes and everything is managed by the .git folder which is a hidden folder and it will get generated the moment you initialize the git repository.
+The .git folder contains all information that is necessary for the project and all information relating commits, remote repository address, etc. It also contains a log that stores the commit history. This log can help you to roll back to the desired version of the code.</p>
+<p><img loading="lazy" src="https://drive.google.com/uc?id=1NdA2p06SfWTvqdjPKt-a7lutwRlpgf1J" alt="history"  />
+</p>
+<p>We will see basic linux commands in the next blog about Linux. So, if you don’t know about mkdir, ls, no need to get worried you can create a folder manually too.</p>
+<p>The .git folder will contain details of every single change made to the code base. All snapshots of the modifications will be recorded in this folder like a database, which makes it possible to undo the changes and rollback to the desired version of the code.</p>
+<p>The .git folder is hidden to prevent accidental deletion or modification of the folder. The version history of the code base will be lost if this folder is deleted. This means, we will not be able to rollback changes made to the code in future.</p>
+<p>Let’s see what individual component does inside the .git directory</p>
+<ul>
+<li>hooks − This folder contains script files. Git hooks are the scripts that are executed before or after events like commit, push etc.</li>
+<li>objects − This folder represents an object database of Git.</li>
+<li>config − This is the local configuration file.</li>
+<li>refs − This folder stores information about tags and branches.</li>
+<li>HEAD − This file stores reference to the current branch. It points to the master branch by default.</li>
+<li>index − This is a binary file and stores staging information (~tutorials point)</li>
+</ul>
+<p>Let’s understand some of the git commands and how it helps in version controlling.</p>
+<p><img loading="lazy" src="https://drive.google.com/uc?id=12jtrgwdDzESVm1AHbZx6fiaeDNa3cE1H" alt="Create"  />
+</p>
+<p>Here, we created a file and wrote “Hi people” inside it.  After that we wrote the command “git status”, and we saw random_text.md in red color. The file is now an untracked file. If the file is untracked , no one knows whether it has been created by someone or not.</p>
+<p>Untracked files are the ones still not versioned—”tracked”—by Git. This is the state of new files you add to your repository. That basically means Git is aware the file exists, but still hasn&rsquo;t saved it in its internal database.</p>
+<p>To add Untracked files in its internal database or say to version it, we use the “git add <filename> “ command.</p>
+<p><img loading="lazy" src="https://drive.google.com/uc?id=11v6R3GMVDCjs2THVHAT0SbOXWy2dWuPo" alt="Create"  />
+</p>
+<p><strong>Command sample till now</strong></p>
+<pre tabindex="0"><code>$git init 
+$touch random_text.md
+$echo &quot;Hi people&quot; &gt;&gt; random_text.md
+$git status
+$git add .
+$git status
+</code></pre><p>Now the file has been staged, versioned or tracked by git. You see the random_text.md in green color now. “git add .” means to save every untracked file present in a current directory. Don’t worry if you don’t know about branch, master, commits , git rm – cached<file> , we will explore them shortly.</p>
+<h3 id="git-commit">Git commit<a hidden class="anchor" aria-hidden="true" href="#git-commit">#</a></h3>
+<p>Git commit is the way of saving the history of the progress with a message.The git commit command captures a snapshot of the project&rsquo;s currently staged changes. The commits are not changed/ deleted until and unless it is forced to.</p>
+<pre tabindex="0"><code>git commit -m &quot;add messages&quot;
+</code></pre><p><strong>-m</strong> means message acronym.
+<img loading="lazy" src="https://drive.google.com/uc?id=1XQSwWlUxJWcQYVpEewC9Iq5159sic4vI" alt="Create"  />
+</p>
+<ul>
+<li>
+<p><strong>Create Mode:</strong> - Tells about permissions given to that file, i.e., File permissions. Here, 100644 means the file is a normal file.</p>
+</li>
+<li>
+<p>Only 1 file is changed i.e random_text.md
+1 <strong>insertion(+)</strong>: 1 line is added to the file.</p>
+</li>
+</ul>
+<h4 id="note">Note:<a hidden class="anchor" aria-hidden="true" href="#note">#</a></h4>
+<p>Sometimes, we accidentally tracked the file which should be kept untracked. So, to restore it back from tracked to untracked. We use the restore command.</p>
+<p><img loading="lazy" src="https://drive.google.com/uc?id=1hElXlCKQhLnQN0bhMx8GSvCYLij42I9g" alt="Create"  />
+</p>
+<pre tabindex="0"><code>git restore --staged random_text.md
+</code></pre><p>To see the history of commits of your project and who and when it was done, use log command.</p>
+<p><img loading="lazy" src="https://drive.google.com/uc?id=1ExQBsJ17crFqZ5wXr4_oAmbPsEbY0zOw" alt="Create"  />
+</p>
+<p><code>git log</code></p>
+<p><strong>32d20fa7e…</strong> is the hash value of the commit that stores information about the commits and version at that point of time.</p>
+<p>Say, accidently you deleted a file which was very necessary with a commit too. Now, the file gets deleted but the history gets reflected in a log as seen below.
+In the first log, the commit of deleted <strong>random_text.md</strong> is reflected.</p>
+<p><img loading="lazy" src="https://drive.google.com/uc?id=1IVawk7ZPJ29th5rVYUFHY3MrwEp4gBty" alt="Create"  />
+</p>
+<p>Now to delete this log and to get our deleted file back. We have to use the below mentioned steps.</p>
+<ul>
+<li>Type <code>git log</code> and see the logs.</li>
+<li>Copy the <strong>hash code</strong> of the log just below the log of the deleted file. In our case the hash code of the log just below the log of the deleted file starts with <strong>32d20f…</strong></li>
+<li>Use <code>git reset &lt;hashcode&gt;</code>. If you check the git log now, the history will be erased.</li>
+<li>Now, to restore the deleted file and make it untracked, you can use the git restore command as mentioned below.</li>
+</ul>
+<p><img loading="lazy" src="https://drive.google.com/uc?id=12CjAi8yhA57VGEewVuiTVgYVw6c2D4nP" alt="Create"  />
+</p>
+<p>In the above example, we restored the tracked file but in most of the cases you can also try doing stashing. Let’s understand it.</p>
+<h3 id="git-stash">Git Stash<a hidden class="anchor" aria-hidden="true" href="#git-stash">#</a></h3>
+<p>Say you are working on a project and you want to try out something new with a clean code base, in this case you don’t want to commit or save the history of your work. For this, you use stash in git.It is used to make all the changes somewhere else without making a commit and history. So, after finalizing the task, we can get back this work and commit in any branch. We’ll talk about branch later.</p>
+<p>For example: You made some changes in a file for some modifications. You are not sure whether your project manager will allow these modifications or not. So, you can’t commit it in a main branch but also you think this is a really cool feature so you can’t get rid of these modifications too. So, you can use stash for this.</p>
+<p>Stash will keep history of changes without even committing. Thus, in future you can get the changes/ modifications back or delete it.</p>
+<p>Stashing takes the messy state of your working directory, and temporarily saves it for further use.  The git stash command enables you to switch branches without committing the current branch.</p>
+<p><img loading="lazy" src="https://drive.google.com/uc?id=1z9Hd2pL_N_YrtjuDfjap6XQfNuuKTqT4" alt="Create"  />
+</p>
+<p><code>git stash</code></p>
+<p>You can observe after using stash, there are no logs about that tracked files.
+So you can get back the hidden state of files back from the stashed place.</p>
+<p><img loading="lazy" src="https://drive.google.com/uc?id=1rHzPCZCykWLiskP840XazwmPXhMf7rP1" alt="Create"  />
+</p>
+<p><code>git stash pop</code></p>
+<p>You can again hide the files using the git stash command easily.</p>
+<p><img loading="lazy" src="https://drive.google.com/uc?id=1xD3mjFA4ol-mF05KvkM7_tnQxGr83ZRM" alt="Create"  />
+</p>
+<p>In order to delete the stashed files. You can see nothing after you write the git status command.</p>
+<p><code>git stash clear</code></p>
+<p><img loading="lazy" src="https://drive.google.com/uc?id=1KffDaB_491ZGd_ox4ptkMYhAOVEEY3R7" alt="Create"  />
+</p>
+<h3 id="git-remote">Git Remote<a hidden class="anchor" aria-hidden="true" href="#git-remote">#</a></h3>
+<p>While working in a project as a team, there consists of a <strong>centralized</strong> repository where the owner or the ones who have the access to the centralized repository can review the others code contribution and merge their contribution if their work matches their code of conduct or principles.</p>
+<p>So, other contributors contain a copy of the centralized repository. The copying of the centralized repo into your local system is done via <strong>Fork</strong>.</p>
+<p>After forking, you need to clone their project into your local system. So, the clone is possible due to the <strong>remote URL</strong>.</p>
+<p>The git remote command is one piece of the broader system which is responsible for syncing changes.</p>
+<p>The git remote command lets you create, view, and delete connections to other repositories. Remote connections are more like bookmarks rather than direct links into other repositories. Instead of providing real-time access to another repository, they serve as convenient names that can be used to reference a not-so-convenient URL. (<em>reference : atlassian.com</em>)</p>
+<p>Git supports many ways to reference a remote repository. Two ways to access a remote repository are using the <strong>HTTP</strong> and <strong>SSH</strong> method. For read-only access to the repository, you should use HTTP and for read-write access, should use SSH protocol.</p>
+<p><img loading="lazy" src="https://drive.google.com/uc?id=1KQEz4QQAqhhGpT-pKkoop_FcjzQT1Jki" alt="Create"  />
+</p>
+<p>You need to configure ssh in your local system for git in order to make it work.
+The command for remote access is</p>
+<pre tabindex="0"><code>$git remote add origin git@github.com:Nix-code/GitHub-tutorial.git
+</code></pre><p>Here let’s break down the command.</p>
+<p><strong>remote</strong> - URL &ldquo;the place where your code is stored.&rdquo; That URL could be your repository on GitHub, or another user&rsquo;s fork(we’ll discuss afterward), or even on a completely different server.</p>
+<p><strong>add</strong> - It adds the URL
+<strong>origin</strong> - Origin of the URL</p>
+<p>Now , git referenced a remote repository using SSH. You can get this code right after you create a new repository.
+Now, you are ready to push your changes in gitHub.</p>
+<p><img loading="lazy" src="https://drive.google.com/uc?id=1XCe9GWGaT122PH8LnF8X3HlGVn7DZVB_" alt="Create"  />
+</p>
+<p>You can push via command line and the changes get reflected in a website.</p>
+<p><img loading="lazy" src="https://drive.google.com/uc?id=1AmrVqyKbyFT8-yL1N9E4omvXOpR7YHkj" alt="Create"  />
+</p>
+<p><code>git push origin &lt;branch_name&gt;</code></p>
+<p>If you check in your repository in the website, you can see all those files in a git repository online.</p>
+<p><img loading="lazy" src="https://drive.google.com/uc?id=1Tk6i4CkcF0AY9OMoRTsBtceoY-ft_lg0" alt="Create"  />
+</p>
+<p>Now, your project is pushed to GitHub using Git version control.</p>
+<h3 id="lets-learn-about-some-advanced-concepts">Let’s Learn about some advanced concepts.<a hidden class="anchor" aria-hidden="true" href="#lets-learn-about-some-advanced-concepts">#</a></h3>
+<p><strong>Clone:</strong> In general terms, clone means to make a deep copy of something. Same in git, we use clone command to copy the entire repository of others in our local system.</p>
+<p>Copy the SSH code of your project and just do the steps shown in the figure.</p>
+<p><img loading="lazy" src="https://drive.google.com/uc?id=1ajZ9CNKN0A8ONMO9dpobcNwcqSB8zmr8" alt="Create"  />
+</p>
+<p><code>git clone &lt;SSH-URL&gt;</code></p>
+<p>As shown in the figure, the entire git repository is copied into your local repository. Cloning is useful when you want to see how others' code works in your system and it is also useful when you are contributing to other people’s repositories.</p>
+<h3 id="fork--pull-request-and-merge">Fork | Pull Request and Merge<a hidden class="anchor" aria-hidden="true" href="#fork--pull-request-and-merge">#</a></h3>
+<p>Fork is similar to clone but instead of copying the other’s repository in a local directory, it copies the repository in a server. So, whenever you fork other’s repository, it is visible as a copy in your gitHub repository. After forking, you get your own unique SSH and HTTPS code of your copied repository. So, whenever you wish to make changes in forked repo, it won’t affect the main / centralized repo.</p>
+<p>After fork, you need to clone the forked repository to make changes locally. After making complete modifications in the cloned repository, you make a Pull request to the owner of the main repository. The owner looks into your modification and if he/she thinks your modification is good enough , he/she merges your pull request and your contribution is visible in the main repository.</p>
+<p><strong>Fork Example</strong></p>
+<p><img loading="lazy" src="https://drive.google.com/uc?id=1JcNCRNZ8IOdcZe7NvoU_HeFPnYdhSpXu" alt="Create"  />
+</p>
+<p>After fork, make a clone of this project in your local system using the git clone command.
+After making changes, make a Pull request.</p>
+<p><img loading="lazy" src="https://drive.google.com/uc?id=1LwRFTAKeOj51nUoV_cggEM6C_H2YhMCq" alt="Create"  />
+</p>
+<p>Always make a pull request from your cloned repository. If you try to push directly in a centralized repo, it won’t work.</p>
+<p>After your work is loved by the main project maintainer, it will get merged like this.</p>
+<p><img loading="lazy" src="https://drive.google.com/uc?id=1Ax0Hh379XcMB2_8ue53-P6wvklsHc5Dw" alt="Create"  />
+</p>
+<p>This is how open source softwares is made. In a centralized repository, a lot of developers around the world contribute and make the software better. <strong>Example</strong> of <strong>open source software</strong> is the linux operating system.</p>
+<p><img loading="lazy" src="https://drive.google.com/uc?id=1iYRuJ9Ae-N4mqyr__2Y-tt0gvzByE2Gc" alt="Create"  />
+</p>
+<p>This is the repo of a Linux operating system. Let’s observe it carefully. Till now, 45.2K people have already forked this main repo, it means, they have copied this project in their gitHub server. Around 5000 + people have already contributed something to this project. If you successfully contribute anything to another&rsquo;s repo and get merged by the maintainer, your identity will be shown in a contributor list. Hat’s off to these 5000+ developers who made the linux system so better till date free of cost.</p>
+<p>In the future blog, we will see about branches, merge conflicts, rebase about GitHub License and many more.</p>
+<p>I appreciate you if you have gone this far reading this blog. Thank you very much for your time. If you have learned something new today, comment on your thoughts.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://nix-code.github.io/blogn33x.github.io/tags/shortcodes/">shortcodes</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://nix-code.github.io/blogn33x.github.io/posts/data_science/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Data Science Introduction</span>
+  </a>
+</nav>
+
+
+<div class="share-buttons">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Git and GitHub: part1 on twitter"
+        href="https://twitter.com/intent/tweet/?text=Git%20and%20GitHub%3a%20part1&amp;url=https%3a%2f%2fnix-code.github.io%2fblogn33x.github.io%2fposts%2fgit_github_part1%2f&amp;hashtags=shortcodes">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Git and GitHub: part1 on linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fnix-code.github.io%2fblogn33x.github.io%2fposts%2fgit_github_part1%2f&amp;title=Git%20and%20GitHub%3a%20part1&amp;summary=Git%20and%20GitHub%3a%20part1&amp;source=https%3a%2f%2fnix-code.github.io%2fblogn33x.github.io%2fposts%2fgit_github_part1%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Git and GitHub: part1 on reddit"
+        href="https://reddit.com/submit?url=https%3a%2f%2fnix-code.github.io%2fblogn33x.github.io%2fposts%2fgit_github_part1%2f&title=Git%20and%20GitHub%3a%20part1">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Git and GitHub: part1 on facebook"
+        href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fnix-code.github.io%2fblogn33x.github.io%2fposts%2fgit_github_part1%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Git and GitHub: part1 on whatsapp"
+        href="https://api.whatsapp.com/send?text=Git%20and%20GitHub%3a%20part1%20-%20https%3a%2f%2fnix-code.github.io%2fblogn33x.github.io%2fposts%2fgit_github_part1%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Git and GitHub: part1 on telegram"
+        href="https://telegram.me/share/url?text=Git%20and%20GitHub%3a%20part1&amp;url=https%3a%2f%2fnix-code.github.io%2fblogn33x.github.io%2fposts%2fgit_github_part1%2f">
+        <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+        </svg>
+    </a>
+</div>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://nix-code.github.io/blogn33x.github.io/">Nishant&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
